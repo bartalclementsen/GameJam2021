@@ -24,8 +24,11 @@ namespace Core.Containers
         /*                               INTERNAL METHODS                                */
         /* ----------------------------------------------------------------------------  */
         internal void Register(Type key, Type value) => Register(key, value, null, false);
+
         internal void Register(Type key, Func<IContainer, object> factory) => Register(key, null, factory, false);
+
         internal void RegisterSingleton(Type key, Type value) => Register(key, value, null, true);
+
         internal void RegisterSingleton(Type key, Func<IContainer, object> factory) => Register(key, null, factory, true);
 
         internal bool TryResolve(Type type, out object result)

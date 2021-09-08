@@ -7,6 +7,9 @@ namespace Core.Loggers
 {
     public class UnityLogger : ILogger
     {
+        /* ----------------------------------------------------------------------------  */
+        /*                                  PROPERTIES                                   */
+        /* ----------------------------------------------------------------------------  */
         private readonly Logger _logger;
 
         /// <summary>
@@ -21,6 +24,9 @@ namespace Core.Loggers
 
         private readonly StringBuilder _stringBuilder;
 
+        /* ----------------------------------------------------------------------------  */
+        /*                                 CONSTRUCTORS                                  */
+        /* ----------------------------------------------------------------------------  */
         public UnityLogger(UnityEngine.Object unityContext) : this()
         {
             _unityContext = unityContext;
@@ -38,6 +44,9 @@ namespace Core.Loggers
             _logger = new Logger(new LogHandler());
         }
 
+        /* ----------------------------------------------------------------------------  */
+        /*                                PUBLIC METHODS                                 */
+        /* ----------------------------------------------------------------------------  */
         public void Error(object message)
         {
             DoLog(message, LogType.Error);
@@ -79,6 +88,9 @@ namespace Core.Loggers
                 _logger.LogException(exception, _unityContext);
         }
 
+        /* ----------------------------------------------------------------------------  */
+        /*                                PRIVATE METHODS                                */
+        /* ----------------------------------------------------------------------------  */
         private void DoLog(object message, LogType logType)
         {
             if(string.IsNullOrWhiteSpace(_tag) && _unityContext == null)
