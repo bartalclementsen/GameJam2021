@@ -1,5 +1,5 @@
 # GameJam2021
-Repository For FT Game Jam 2019. Git Url (https://github.com/Taertass/GameJam2019)
+Repository For Game Jam 2021. Git Url (https://github.com/bartalclementsen/GameJam2021)
 
 # Software needed for project
 - **Unity 2021.1.19f1**, Installed via Unity Hub (https://unity3d.com/get-unity/download)
